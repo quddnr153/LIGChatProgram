@@ -49,9 +49,10 @@ void CClientSocket::OnReceive(int nErrorCode)
 		strTmp.Format(_T("[%s:%d] : %s"), strIPAddress, uPortNumber, szBuffer);
 		pMain->m_List.AddString(strTmp);
 		pMain->m_List.SetCurSel(pMain->m_List.GetCount() -1);
+		TCHAR *tmp = (TCHAR*)(LPCTSTR)strTmp;
 
 		CListenSocket* pServerSocket = (CListenSocket*)m_pListenSocket;
-		pServerSocket->SendChatDataAll(szBuffer);
+		pServerSocket->SendChatDataAll(tmp);
 	}
 
 	CSocket::OnReceive(nErrorCode);

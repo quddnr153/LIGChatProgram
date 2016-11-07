@@ -1,4 +1,3 @@
-
 // ChatClientDlg.h : 헤더 파일
 //
 
@@ -6,22 +5,26 @@
 #include "afxwin.h"
 #include "ConnectSocket.h"
 
+#include "MyView.h"
+
 // CChatClientDlg 대화 상자
 class CChatClientDlg : public CDialog
 {
-// 생성입니다.
+	// 생성입니다.
 public:
 	CChatClientDlg(CWnd* pParent = NULL);	// 표준 생성자입니다.
 	CConnectSocket		m_Socket;
-
-// 대화 상자 데이터입니다.
+	CMyView *mp_first_view;
+	// 대화 상자 데이터입니다.
 	enum { IDD = IDD_CHATCLIENT_DIALOG };
 
-	protected:
+	CMyView *GetFirstViewPointer();
+
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
 
 
-// 구현입니다.
+														// 구현입니다.
 protected:
 	HICON m_hIcon;
 

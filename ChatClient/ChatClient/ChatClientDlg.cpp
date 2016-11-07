@@ -110,6 +110,16 @@ BOOL CChatClientDlg::OnInitDialog()
 		return FALSE;
 	}
 
+	CRect r;
+	GetDlgItem(IDC_PAINT_AREA)->GetWindowRect(r);
+	ScreenToClient(r);
+
+	// 동적으로 뷰를 생성한다... 프레임이나 뷰 계열은 자동 삭제 루틴이 들어있기
+	// 때문에 WM_DESTROY에 현재 동적할당된 뷰의 제거루틴이 없어도 된다...
+	mp_first_view = new CMyView();
+	mp_first_view->Create(NULL, LPCTSTR(""), WS_CHILD | WS_BORDER | WS_VISIBLE, r, this, 20001);
+
+
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 
@@ -171,4 +181,9 @@ void CChatClientDlg::OnBnClickedButtonSend()
 
 	m_strMessage = _T("");
 	UpdateData(FALSE);
+}
+
+CMyView *CChatClientDlg::GetFirstViewPointer()
+{
+	return mp_first_view;
 }

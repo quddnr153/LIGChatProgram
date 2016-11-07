@@ -16,13 +16,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Korean resources
+// 한국어(대한민국) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
-#ifdef _WIN32
 LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 #pragma code_page(949)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -72,6 +70,7 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\ChatClient.ico"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
@@ -88,16 +87,17 @@ BEGIN
     DEFPUSHBUTTON   "확인",IDOK,113,41,50,14,WS_GROUP
 END
 
-IDD_CHATCLIENT_DIALOG DIALOGEX 0, 0, 319, 141
+IDD_CHATCLIENT_DIALOG DIALOGEX 0, 0, 319, 278
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "ChatClient"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "확인",IDOK,262,120,50,14
+    DEFPUSHBUTTON   "확인",IDOK,262,257,50,14
     LISTBOX         IDC_List,7,7,305,90,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_Edit_Message,7,100,254,12,ES_AUTOHSCROLL
     PUSHBUTTON      "Send",IDC_Button_Send,262,99,50,14
+    CONTROL         "",IDC_PAINT_AREA,"Static",SS_BLACKFRAME,7,124,305,126
 END
 
 
@@ -146,7 +146,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -161,7 +161,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 312
         TOPMARGIN, 7
-        BOTTOMMARGIN, 134
+        BOTTOMMARGIN, 271
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -169,16 +169,27 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_CHATCLIENT_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ABOUTBOX            "ChatClient 정보(&A)..."
     IDP_SOCKETS_INIT_FAILED "Windows 소켓을 초기화하지 못했습니다."
 END
 
-#endif    // Korean resources
+#endif    // 한국어(대한민국) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

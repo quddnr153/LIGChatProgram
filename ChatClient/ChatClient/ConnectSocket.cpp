@@ -39,7 +39,8 @@ void CConnectSocket::OnReceive(int nErrorCode)
 	{
 		CChatClientDlg* pMain = (CChatClientDlg*)AfxGetMainWnd();
 		pMain->m_List.AddString(szBuffer);
-		pMain->m_List.SetCurSel(pMain->m_List.GetCount() -1);
+		pMain->m_List.SetCurSel(pMain->m_List.GetCount() - 1);
+		pMain->m_List.SetCurSel(-1);
 	}
 
 	CSocket::OnReceive(nErrorCode);
