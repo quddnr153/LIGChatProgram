@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  ListenSocket.cpp
+  ClientSocket.cpp
+  ChatServerDlg.cpp
+  ChatServer.cpp
+  코드를 생성하고 있습니다...
+ChatServer.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+  ChatServer.vcxproj -> C:\Users\quddn\Desktop\1\LIGChatProgram\ChatServer\Debug\ChatServer.exe

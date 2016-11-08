@@ -102,7 +102,7 @@ BOOL CChatClientDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	m_Socket.Create();
-	if(m_Socket.Connect(_T("127.0.0.1"), 21000) == FALSE)
+	if(m_Socket.Connect(_T("210.107.198.191"), 21000) == FALSE) // "127.0.0.1"
 	{
 		AfxMessageBox(_T("ERROR: Failed to connect server"));
 		PostQuitMessage(0);
